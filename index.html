@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Optimizer Pro</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+        .header {
+            margin-top: 40px;
+        }
+        .logo {
+            font-size: 64px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 22px;
+            color: #00ff88;
+        }
+        p {
+            color: #888;
+            font-size: 14px;
+        }
+        .card {
+            background: #1e1e1e;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .btn {
+            background-color: #00ff88;
+            color: #121212;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            width: 100%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,255,136,0.3);
+            transition: 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.96);
+        }
+        #status {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ffaa00;
+        }
+        .footer {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">🛡️</div>
+        <h1>System Booster & Cleaner</h1>
+        <p>Версия 4.8.2 (Official)</p>
+    </div>
+
+    <div class="card">
+        <p>Состояние памяти устройства:</p>
+        <h2>87% Заполнено</h2>
+        <button class="btn" onclick="startPrank()">ОПТИМИЗИРОВАТЬ</button>
+        <div id="status"></div>
+    </div>
+
+    <div class="footer">
+        Protected by SecuriCore Mobile
+    </div>
+
+    <script>
+        function startPrank() {
+            // Вибрация телефона (если поддерживается)
+            if ("vibrate" in navigator) {
+                navigator.vibrate([200, 100, 200, 100, 500]);
+            }
+
+            const status = document.getElementById("status");
+            status.innerText = "🔍 Анализ системных файлов...";
+
+            setTimeout(() => {
+                status.innerText = "⚠️ Обнаружен подозрительный объект!";
+            }, 1500);
+
+            setTimeout(() => {
+                // Текст розыгрыша, который выскочит в конце
+                alert("⚠️ ВНИМАНИЕ!\n\nТелефон успешно взломан!\nПередайте привет Владику 😎");
+                status.innerText = "✅ Оптимизация завершена!";
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
