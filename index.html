@@ -22,6 +22,7 @@
             flex-direction: column;
             justify-content: space-between;
             height: 100vh;
+            transition: background-color 0.5s ease;
         }
         .header {
             margin-top: 40px;
@@ -94,20 +95,26 @@
 
     <script>
         function startPrank() {
+            // Жесткая вибрация
             if ("vibrate" in navigator) {
-                navigator.vibrate([200, 100, 200, 100, 500]);
+                navigator.vibrate([500, 200, 500, 200, 1000, 300, 800]);
             }
 
             const status = document.getElementById("status");
-            status.innerText = "🔍 Анализ системных файлов...";
+            status.innerText = "⚡ Максимальный разгон процессора...";
+            
+            // Меняем фон на жуткий красный варнинг
+            document.body.style.backgroundColor = "#300000";
 
             setTimeout(() => {
-                status.innerText = "⚠️ Обнаружен подозрительный объект!";
+                status.innerText = "🔥 Перегрев ядра: 99°C!";
+                document.body.style.backgroundColor = "#500000";
             }, 1500);
 
             setTimeout(() => {
-                alert("⚠️ ВНИМАНИЕ!\n\nТелефону твоему пизда!\nПередайте привет Neulovim Dez1x 😎");
-                status.innerText = "✅ Оптимизация завершена!";
+                alert("🚨 КРИТИЧЕСКАЯ ОШИБКА!\n\nОбнаружено несанкционированное проникновение!\nПередай привет Владику 😎");
+                status.innerText = "✅ Система уничтожена!";
+                document.body.style.backgroundColor = "#121212";
             }, 3000);
         }
     </script>
