@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Optimizer Pro</title>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
     <style>
         body {
             background-color: #121212;
@@ -88,7 +94,6 @@
 
     <script>
         function startPrank() {
-            // Вибрация телефона (если поддерживается)
             if ("vibrate" in navigator) {
                 navigator.vibrate([200, 100, 200, 100, 500]);
             }
@@ -101,8 +106,7 @@
             }, 1500);
 
             setTimeout(() => {
-                // Текст розыгрыша, который выскочит в конце
-                alert("⚠️ ВНИМАНИЕ!\n\nТелефон успешно взломан!\nПередайте привет Владику 😎");
+                alert("⚠️ ВНИМАНИЕ!\n\nТелефону твоему пизда!\nПередайте привет Neulovim Dez1x 😎");
                 status.innerText = "✅ Оптимизация завершена!";
             }, 3000);
         }
